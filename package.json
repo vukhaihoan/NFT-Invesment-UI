@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/dotenv": "^8.2.0",
     "axios": "^0.24.0",
     "clsx": "^1.1.1",
+    "framer-motion": "^5.3.0",
     "history": "^5.1.0",
     "i18next": "^21.4.2",
     "i18next-browser-languagedetector": "^6.1.2",
@@ -29,10 +33,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "tailwind:dev": "tailwindcss build src/assets/css/tailwind.css -o src/assets/css/tailwind.output.css",
-    "tailwind:build": "cross-env NODE_ENV=production postcss src/assets/css/tailwind.css -o src/assets/css/tailwind.output.css",
-    "prestart": "npm run tailwind:dev",
-    "prebuild": "npm run tailwind:build",
+    "css": "set TAILWIND_MODE=watch&postcss ./src/assets/css/tailwind.scss -o ./src/assets/css/tailwind.output.scss -w --verbose",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -60,7 +61,8 @@
     "autoprefixer": "^10.4.0",
     "cross-env": "^7.0.3",
     "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.2",
+    "postcss-cli": "8.3.1",
+    "postcss-scss": "^4.0.2",
     "tailwindcss": "^2.2.19"
   }
 }
